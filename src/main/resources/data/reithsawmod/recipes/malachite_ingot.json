@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "",
+    "ingredients":
+    [
+        {"item": "reithsawmod:malachite_block"}
+    ],
+    "result":
+    {
+        "item": "reithsawmod:malachite_ingot",
+        "count": 9
+    }
+}

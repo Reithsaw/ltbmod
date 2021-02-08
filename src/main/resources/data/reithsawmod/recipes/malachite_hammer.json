@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "mmm",
+    "msm",
+    " s "
+  ],
+  "key": {
+    "m": {
+      "item": "reithsawmod:malachite_ingot"
+    },
+    "s": {
+      "item": "reithsawmod:malachite_stick"
+    }
+  },
+  "result": {
+    "item": "reithsawmod:malachite_hammer"
+  }
+}

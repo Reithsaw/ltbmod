@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    " #",
+    " #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "reithsawmod:malachite_ingot"
+    }
+  },
+  "result": {
+    "item": "reithsawmod:malachite_hoe"
+  }
+}

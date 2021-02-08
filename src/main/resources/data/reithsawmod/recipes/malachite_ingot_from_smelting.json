@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "reithsawmod:malachite_ore",
+    "item": "reithsawmod:end_malachite_ore"
+  },
+  "result": "reithsawmod:malachite_ingot",
+  "experience": 2.5,
+  "cookingtime": 200
+}

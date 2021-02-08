@@ -1,0 +1,11 @@
+{
+  "id": "malachite",
+  "miningLevel": 5,
+  "durability": 2123,
+  "blockBreakSpeed": 4.0,
+  "attackDamage": 11,
+  "attackSpeed": 0.2,
+  "enchantability": 15,
+  "repairIngredient": "reithsawmod:malachite_ingot",
+  "isFireImmune": true
+}

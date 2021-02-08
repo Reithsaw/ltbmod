@@ -1,0 +1,114 @@
+plugins {
+	id 'fabric-loom' version '0.5-SNAPSHOT'
+	id 'maven-publish'
+	id 'com.matthewprenger.cursegradle' version '1.4.0'
+}
+
+Properties properties = new Properties()
+File localProperties = new File("local.properties")
+
+if(localProperties.exists()) {
+	properties.load(localProperties.newDataInputStream())
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+archivesBaseName = project.modid
+version = project.version + "-" + project.minecraft_version
+
+
+
+minecraft {
+}
+
+repositories {
+	jcenter()
+
+	maven { url = "https://maven.fabricmc.net/" }
+	maven { url = 'https://jitpack.io' }
+	maven { url "http://server.bbkr.space:8081/artifactory/libs-release" }
+}
+
+apply plugin: 'eclipse'
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:1.16.4+build.9:v2"
+	modCompile "net.fabricmc:fabric-loader:${project.loader_version}"
+	modCompile "net.fabricmc.fabric-api:fabric-api:${project.api_version}"
+
+	// magna for hammers
+	modImplementation ("com.github.Draylar:magna:${project.magna_version}") {
+		exclude group: "net.fabricmc"
+	}
+	include "com.github.Draylar:magna:${project.magna_version}"
+
+	// libcd
+	modImplementation ('io.github.cottonmc:LibCD:3.0.3+1.16.3') {
+		exclude group: "net.fabricmc"
+	}
+	include 'io.github.cottonmc:LibCD:3.0.3+1.16.3'
+
+	// dev modmenu
+	modCompile "io.github.prospector:modmenu:${project.mod_menu_version}"
+
+	// static data for hammer loading
+	modImplementation ('com.github.Draylar:static-content:1.0.1' ) {
+		exclude group: "net.fabricmc"
+	}
+	include 'com.github.Draylar:static-content:1.0.1'
+}
+
+processResources {
+	inputs.property "version", project.version
+
+	from(sourceSets.main.resources.srcDirs) {
+		include "fabric.mod.json"
+		expand "version": project.version
+	}
+
+	from(sourceSets.main.resources.srcDirs) {
+		exclude "fabric.mod.json"
+	}
+}
+
+// ensure that the encoding is set to UTF-8, no matter what the system default is
+// this fixes some edge cases with special characters not displaying correctly
+// see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
+
+// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+// if it is present.
+// If you remove this task, sources will not be generated.
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = "sources"
+	from sourceSets.main.allSource
+}
+
+jar {
+	from "LICENSE"
+}
+
+// configure the maven publication
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			// add all the jars that should be included when publishing to maven
+			artifact(remapJar) {
+				builtBy remapJar
+			}
+			artifact(sourcesJar) {
+				builtBy remapSourcesJar
+			}
+		}
+	}
+
+	// select the repositories you want to publish to
+	repositories {
+		// uncomment to publish to the local maven
+		// mavenLocal()
+	}
+}

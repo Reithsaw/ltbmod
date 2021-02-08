@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "reithsawmod:item/malachite_helmet"
+  }
+}

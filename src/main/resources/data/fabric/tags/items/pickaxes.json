@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "reithsawmod:malachite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "reithsawmod:malachite_hammer",
+      "required": false
+    }
+  ]
+}

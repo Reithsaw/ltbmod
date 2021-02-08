@@ -1,0 +1,22 @@
+{
+  "item.reithsawmod.malachite_ingot" : "Malachite Ingot",
+  "item.reithsawmod.malachite_stick" : "Malachite Stick",
+
+  "item.reithsawmod.malachite_sword" : "Malachite Sword",
+  "item.reithsawmod.malachite_pickaxe" : "Malachite Pickaxe",
+  "item.reithsawmod.malachite_axe" : "Malachite Axe",
+  "item.reithsawmod.malachite_shovel" : "Malachite Shovel",
+  "item.reithsawmod.malachite_hoe" : "Malachite Hoe",
+  "item.reithsawmod.malachite_hammer" : "Malachite Hammer",
+
+  "item.reithsawmod.malachite_helmet" : "Malachite Helmet",
+  "item.reithsawmod.malachite_chestplate" : "Malachite Chestplate",
+  "item.reithsawmod.malachite_leggings" : "Malachite Leggings",
+  "item.reithsawmod.malachite_boots" : "Malachite Boots",
+
+  "block.reithsawmod.malachite_block" : "Malachite Block",
+  "block.reithsawmod.malachite_ore" : "Malachite Ore",
+  "block.reithsawmod.end_malachite_ore" : "End Malachite Ore",
+
+  "itemGroup.reithsawmod.general": "reithsawmod"
+}

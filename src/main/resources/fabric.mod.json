@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "reithsawmod",
+  "version": "${version}",
+
+  "name": "LTB Mod",
+  "description": "This is an LTB MOD !",
+  "authors": [
+    "Reithsaw"
+  ],
+
+  "license": "CC0-1.0",
+  "icon": "assets/reithsawmod/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "be.reithsaw.reithsawmod.REITHSAWMOD"
+    ]
+  },
+  "modmenu": [
+    "draylar.vh.ModMenuIntegration"
+  ],
+  "mixins": [
+    "reithsawmod.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
